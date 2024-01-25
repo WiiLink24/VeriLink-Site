@@ -1,5 +1,5 @@
 
-export default function Home() {
+export default function Linked() {
   return (
     <div className="page-container">
       <div className="header">
