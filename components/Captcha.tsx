@@ -1,6 +1,6 @@
 "use client"
 
-import ReCAPTCHA from "react-google-recaptcha";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Constants from "./Constants"
 
 type CaptchaProps = {
@@ -24,9 +24,9 @@ function Captcha ({ auth, onError }: CaptchaProps) {
 
     return (
         <div className="section">
-            <ReCAPTCHA 
-                sitekey="6LeopFopAAAAAHFNz2wZRzWzkVHrrAvqc-oNzHkl"
-                onChange={handleCaptchaSubmission}
+            <HCaptcha 
+                sitekey="a2be32d6-a4d0-416d-8302-d1c66c046c2f"
+                onVerify={handleCaptchaSubmission}
             />
             <p>Secured by VeriLink</p>
         </div>
