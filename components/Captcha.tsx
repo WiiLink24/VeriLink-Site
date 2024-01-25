@@ -27,6 +27,7 @@ function Captcha ({ auth, onError }: CaptchaProps) {
             <HCaptcha 
                 sitekey="a2be32d6-a4d0-416d-8302-d1c66c046c2f"
                 onVerify={handleCaptchaSubmission}
+                theme="dark"
             />
             <p>Secured by VeriLink</p>
         </div>
