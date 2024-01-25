@@ -4,7 +4,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 type CaptchaProps = {
     auth: any,
-    onError: (error: string) => void
+    onError: (error: string | null) => void
 }
 
 function Captcha ({ auth, onError }: CaptchaProps) {

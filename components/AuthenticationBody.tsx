@@ -23,11 +23,15 @@ function AuthenticationBody () {
         setDidAuth(true)
     }
     
+    async function doCaptcha (response: any) {
+        setError(response)
+    }
+    
     return (
         <>
             {error && <div className="error">{error}</div>}
             <DiscordOAuth doAuth={doAuth} user={auth} authed={didAuth} />
-            {didAuth && <Captcha auth={auth} onError={setError} />}
+            {didAuth && <Captcha auth={auth} onError={doCaptcha} />}
         </>
     )
 }
