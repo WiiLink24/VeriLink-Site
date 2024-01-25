@@ -27,7 +27,7 @@ function AuthenticationBody () {
         <>
             {error && <div className="error">{error}</div>}
             <DiscordOAuth doAuth={doAuth} user={auth} authed={didAuth} />
-            {didAuth && <Captcha />}
+            {didAuth && <Captcha auth={auth} />}
         </>
     )
 }
