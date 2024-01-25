@@ -13,10 +13,10 @@ function DiscordOAuth ({ authed, doAuth, user }: DiscordOAuthProps) {
 
     function startOAuth () {
         if (oauth) return
-        oauth = window.open("https://discord.com/api/oauth2/authorize?client_id=1199919936722706432&redirect_uri=http://localhost:3000&response_type=code&scope=identify%20email", "popup", "popup=true")
+        oauth = window.open(`https://discord.com/api/oauth2/authorize?client_id=1199919936722706432&redirect_uri=${window.location.href}&response_type=code&scope=identify%20email`, "popup", "popup=true")
         const checkPopup = setInterval(() => {
             // Watch for the popup to reach the endpoint and close itself
-            if (oauth.window.location.href.includes(Constants.APIBaseURL)) {
+            if (oauth.window.location.href.includes(window.location.href)) {
                 oauth.close()
                 console.log(oauth.window.location.href)
                 doAuth(oauth.window.location.href.split("?code=")[1])
