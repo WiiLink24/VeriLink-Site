@@ -1,5 +1,7 @@
 "use client"
 
+import Constants from "./Constants"
+
 type DiscordOAuthProps = {
     authed: boolean
     doAuth: (code: string) => void
@@ -14,7 +16,7 @@ function DiscordOAuth ({ authed, doAuth, user }: DiscordOAuthProps) {
         oauth = window.open("https://discord.com/api/oauth2/authorize?client_id=1199919936722706432&redirect_uri=http://localhost:3000&response_type=code&scope=identify%20email", "popup", "popup=true")
         const checkPopup = setInterval(() => {
             // Watch for the popup to reach the endpoint and close itself
-            if (oauth.window.location.href.includes("localhost:3000")) {
+            if (oauth.window.location.href.includes(Constants.APIBaseURL)) {
                 oauth.close()
                 console.log(oauth.window.location.href)
                 doAuth(oauth.window.location.href.split("?code=")[1])

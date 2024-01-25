@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Captcha from "./Captcha"
 import DiscordOAuth from "./DiscordOAuth"
+import Constants from "./Constants"
 
 function AuthenticationBody () {
     const [didAuth, setDidAuth] = useState(false)
@@ -10,7 +11,7 @@ function AuthenticationBody () {
     const [error, setError] = useState(null)
 
     async function doAuth (code: string) {
-        const data = await fetch("http://localhost:3001/api/token", {
+        const data = await fetch(`${Constants.APIBaseURL}/api/token`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

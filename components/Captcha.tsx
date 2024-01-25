@@ -1,6 +1,7 @@
 "use client"
 
 import ReCAPTCHA from "react-google-recaptcha";
+import Constants from "./Constants"
 
 type CaptchaProps = {
     auth: any,
@@ -9,7 +10,7 @@ type CaptchaProps = {
 
 function Captcha ({ auth, onError }: CaptchaProps) {
     async function handleCaptchaSubmission(token: string | null) {
-        const data = await fetch("http://localhost:3001/api/captcha", {
+        const data = await fetch(`${Constants.APIBaseURL}/api/captcha`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -18,7 +19,7 @@ function Captcha ({ auth, onError }: CaptchaProps) {
         }).then(res => res.json())
 
         if (!data.success) return onError(data.message)
-        window.location.href = "http://localhost:3000/linked"
+        window.location.href = `${Constants.APIBaseURL}/linked`
     }
 
     return (
