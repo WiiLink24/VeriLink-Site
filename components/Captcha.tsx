@@ -3,12 +3,13 @@
 import ReCAPTCHA from "react-google-recaptcha";
 
 type CaptchaProps = {
-    auth: any
+    auth: any,
+    onError: (error: string) => void
 }
 
-function Captcha ({ auth }: CaptchaProps) {
+function Captcha ({ auth, onError }: CaptchaProps) {
     async function handleCaptchaSubmission(token: string | null) {
-        await fetch("http://localhost:3001/api/captcha", {
+        const data = await fetch("http://localhost:3001/api/captcha", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -16,6 +17,7 @@ function Captcha ({ auth }: CaptchaProps) {
             body: JSON.stringify({ token, auth: auth.token }),
         }).then(res => res.json())
 
+        if (!data.success) return onError(data.message)
         window.location.href = "http://localhost:3000/linked"
     }
 
