@@ -13,7 +13,7 @@ function Captcha ({ auth }: CaptchaProps) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ token, auth }),
+            body: JSON.stringify({ token, auth: auth.token }),
         }).then(res => res.json())
 
         window.location.href = "http://localhost:3000/linked"
