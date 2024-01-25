@@ -1,4 +1,4 @@
-const APIBaseURL = 'http://51.222.141.109:3004'
+const APIBaseURL = 'http://localhost:3001'
 
 const Constants = {
     APIBaseURL

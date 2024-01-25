@@ -31,12 +31,19 @@ function DiscordOAuth ({ authed, doAuth, user }: DiscordOAuthProps) {
     return (
         <div className="section">
             {!authed ?
-                <button onClick={startOAuth} className="authenticate">Authenticate with Discord</button>
+                <>
+                    <p>Before we can get started, please authenticate with Discord.</p>
+                    <button onClick={startOAuth} className="authenticate">Authenticate with Discord</button>
+                </>
                 :
-                <div className="user">
-                    <h1>{user.data.username}</h1>
-                    <img alt="user-image" src={`https://cdn.discordapp.com/avatars/${user.data.id}/${user.data.avatar}.png`} width={32} height={32} />
-                </div>
+                <>
+                    <div className="user">
+                        <p><b>Welcome</b></p>&nbsp;
+                        <h1>{user.data.username}</h1>
+                        <img alt="user-image" src={`https://cdn.discordapp.com/avatars/${user.data.id}/${user.data.avatar}.png`} width={32} height={32} />
+                    </div>
+                    <p>Before you can continue, we need to make sure you're actually human.</p>
+                </>
             }
         </div>
     )

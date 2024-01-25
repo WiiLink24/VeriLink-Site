@@ -28,6 +28,7 @@ function Captcha ({ auth, onError }: CaptchaProps) {
                 sitekey="6LeopFopAAAAAHFNz2wZRzWzkVHrrAvqc-oNzHkl"
                 onChange={handleCaptchaSubmission}
             />
+            <p>Secured by VeriLink</p>
         </div>
     )
 }

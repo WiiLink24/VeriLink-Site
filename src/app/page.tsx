@@ -2,14 +2,17 @@ import AuthenticationBody from "../../components/AuthenticationBody";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-6xl font-bold">
-        Verilink
-      </h1>
-      <p className="mt-3 text-2xl">
-        Verify your Discord account with ease.
-      </p>
+    <div className="page-container">
+      <div className="header">
+        <h3>Welcome to<br/>RiiConnect24</h3>
+        <img src="https://media.discordapp.net/attachments/1199529822561513482/1200152589560463450/Screenshot_2024-01-25_at_19.57.30.png?ex=65c52433&is=65b2af33&hm=80dd8a85d43d39e6b16819bd2a3e439e96b32c044e159ce6f45e23414aef63a4&=&format=webp&quality=lossless&width=1172&height=936" alt="RiiConnect24 Logo" width="100" height="100" />
+      </div>
+
       <AuthenticationBody />
+
+      <div className="footer">
+        <p>&copy; 2015</p>
+      </div>
     </div> 
   )
 }
