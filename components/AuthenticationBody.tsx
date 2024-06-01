@@ -32,7 +32,7 @@ function AuthenticationBody () {
         <>
             {error && <div className="error">{error}</div>}
             <div className="auth-container">
-                <DiscordOAuth doAuth={doAuth} user={auth} authed={didAuth} />
+            <DiscordOAuth doAuth={doAuth} user={auth} authed={didAuth} />
                 {didAuth && <Captcha auth={auth} onError={doCaptcha} />}
             </div>
         </>

@@ -33,6 +33,7 @@ function DiscordOAuth ({ authed, doAuth, user }: DiscordOAuthProps) {
             {!authed ?
                 <>
                     <p>Before we can get started, please authenticate with Discord.</p>
+                    <br/>
                     <button onClick={startOAuth} className="authenticate">Authenticate with Discord</button>
                 </>
                 :
@@ -42,7 +43,7 @@ function DiscordOAuth ({ authed, doAuth, user }: DiscordOAuthProps) {
                         <h1>{user.data.username}</h1>
                         <img alt="user-image" src={`https://cdn.discordapp.com/avatars/${user.data.id}/${user.data.avatar}.png`} width={32} height={32} />
                     </div>
-                    <p>Before you can continue, we need to make sure you're actually human.</p>
+                    <p>Before you can continue, we need to make sure you&apos;re actually human.</p>
                 </>
             }
         </div>

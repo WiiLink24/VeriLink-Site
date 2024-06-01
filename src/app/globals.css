@@ -18,12 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(41deg, #0d6efd 0%, rgba(255, 0, 59, 1) 100%);
 }
 
 @layer utilities {
@@ -88,5 +83,12 @@ body {
 .auth-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.section {
+  background-color: #ffffffde;
+  border-radius: 5px;
+  padding: 2em;
+  color: black;
 }
