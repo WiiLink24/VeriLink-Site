@@ -1,7 +1,7 @@
 "use client"
 
-import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Constants from "./Constants"
+import Turnstile from "react-turnstile";
 
 type CaptchaProps = {
     auth: any,
@@ -24,8 +24,8 @@ function Captcha ({ auth, onError }: CaptchaProps) {
 
     return (
         <div className="section">
-            <HCaptcha 
-                sitekey="a2be32d6-a4d0-416d-8302-d1c66c046c2f"
+            <Turnstile
+                sitekey="0x4AAAAAABtAWOdhIxZnNzMz"
                 onVerify={handleCaptchaSubmission}
                 theme="dark"
             />
