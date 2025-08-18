@@ -26,7 +26,7 @@ function Captcha ({ auth, onError }: CaptchaProps) {
         <div className="section">
             <Turnstile
                 sitekey="0x4AAAAAABtAWOdhIxZnNzMz"
-                onVerify={handleCaptchaSubmission}
+                onSuccess={handleCaptchaSubmission}
                 theme="dark"
             />
             <p>Secured by VeriLink</p>
