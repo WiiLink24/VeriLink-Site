@@ -1,4 +1,4 @@
-const APIBaseURL = 'http://localhost:3001'
+const APIBaseURL = 'https://verilinkapi.matthe815.dev'
 
 const Constants = {
     APIBaseURL
