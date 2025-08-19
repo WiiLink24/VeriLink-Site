@@ -19,76 +19,54 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(41deg, #0d6efd 0%, rgba(255, 0, 59, 1) 100%);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
+  @apply antialiased;
 }
 
+/* Utility */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
 
+/* Buttons */
 .authenticate {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-xl shadow-md transition-all duration-200;
 }
 
 .authenticated {
-  @apply bg-blue-800 text-white font-bold py-2 px-4 rounded;
+  @apply bg-blue-800 hover:bg-blue-900 text-white font-semibold py-2 px-6 rounded-xl shadow-lg transition-all duration-200;
 }
 
+/* Sections / Cards */
 .section {
-  padding: 8px;
+  @apply bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-md text-black;
 }
 
+/* User profile row */
 .user {
-  display: flex;
-  flex-direction: row;
+  @apply flex flex-row items-center space-x-3;
 }
 
 .user img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-left: 8px;
+  @apply w-10 h-10 rounded-full shadow;
 }
 
+/* Error messages */
 .error {
-  padding: 8px;
-  background-color: #f44336;
-  color: white;
-  margin-top: 4px;
-  border: 1px solid #531c18;
-  border-radius: 4px;
+  @apply p-3 bg-red-600 text-white mt-2 border border-red-900 rounded-lg shadow-md;
 }
 
+/* Page layout */
 .page-container {
-  padding: 20px;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: center;
-  flex-wrap: wrap;
-  text-align: center;
+  @apply p-6 w-full min-h-screen flex flex-col justify-between items-center text-center;
 }
 
 .header {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: 40px;
+  @apply w-full flex flex-row justify-between text-4xl font-bold tracking-tight;
 }
 
 .auth-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.section {
-  background-color: #ffffffde;
-  border-radius: 5px;
-  padding: 2em;
-  color: black;
+  @apply flex flex-row justify-center gap-4;
 }
