@@ -19,7 +19,7 @@ function Captcha ({ auth, onError }: CaptchaProps) {
         }).then(res => res.json())
 
         if (!data.success) return onError(data.message)
-        window.location.href = `${window.location.href}linked`
+        window.location.href = `/linked`
     }
 
     return (
